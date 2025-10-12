@@ -10,11 +10,7 @@ function Search() {
     if (!query.trim()) return;
 
     const data = await fetchMovies(query);
-    if (data.Response === "True") {
-      setMovies(data.Search);
-    } else {
-      setMovies([]);
-    }
+    setMovies(data);
   };
 
   return (
@@ -28,9 +24,16 @@ function Search() {
         <button type="submit">Search</button>
       </form>
 
-      {movies.map((movie) => (
-        <div key={movie.imdbID}>{movie.Title}</div>
-      ))}
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.imdbID}>
+            <img src={movies.Poster} alt="movie poster" />
+            <h2>
+              {movie.Title}
+            </h2>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

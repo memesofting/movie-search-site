@@ -6,7 +6,6 @@ import Trending from "./Trending";
 function HomePage() {
     return ( <>
     <Navbar />
-    <Trending />
     <Search />
     <Footer />
     </> );
