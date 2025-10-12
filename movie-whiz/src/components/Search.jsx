@@ -1,15 +1,17 @@
 import { useState } from "react";
 import fetchMovies from "../services/movieService";
+import MovieList from "./MovieList";
 
-function Search() {
+function Search({ setMovies }) {
   const [query, setQuery] = useState("");
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
 
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!query.trim()) return;
 
     const data = await fetchMovies(query);
+    console.log("Fetched data:", data);
     setMovies(data);
   };
 
@@ -23,17 +25,6 @@ function Search() {
         />
         <button type="submit">Search</button>
       </form>
-
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.imdbID}>
-            <img src={movies.Poster} alt="movie poster" />
-            <h2>
-              {movie.Title}
-            </h2>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
