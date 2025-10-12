@@ -19,11 +19,12 @@ function Search({ setMovies }) {
     <div>
       <form onSubmit={handleSearch}>
         <input
+        className="bg-gray-300 ml-auto m-5 max-w-400 p-2"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search movies..."
         />
-        <button type="submit">Search</button>
+        <button className="bg-blue-500 p-3" type="submit">Search</button>
       </form>
     </div>
   );

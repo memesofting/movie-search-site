@@ -3,9 +3,9 @@ function MovieList({ movies }) {
         return <p className="text-center text-gray-500 mt-5">No movies found.</p>;
     }
     return (
-        <ul>
+        <ul className="flex flex-row flex-wrap justify-center mt-5">
             {movies.map((movie) => (
-                <li key={movie.imdbID}>
+                <li key={movie.imdbID} className="p-2 w-50">
                     <img src={movie.Poster} alt="movie poster" />
                     <h2>
                         {movie.Title}
