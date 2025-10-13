@@ -9,11 +9,15 @@ function HomePage() {
     const [movies, setMovies] = useState([]);
     console.log("Movies in HomePage:", movies);
 
-    return (<>
+    return (
+    <div className="flex flex-col min-h-screen">
         <Navbar setMovies={setMovies} />
-        <MovieList movies={movies} />
+        <main className="flex-grow">
+            <MovieList movies={movies} />
+        </main>
         <Footer />
-    </>);
+    </div>
+    );
 }
 
 export default HomePage;

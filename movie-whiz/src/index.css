@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
