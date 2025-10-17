@@ -13,4 +13,4 @@ A web app that allows users to search for movies and view details such as poster
 - **Deployment:** Vercel
 
 ## Demo
-Live site: 
+Live site: https://movie-whiz.vercel.app/
