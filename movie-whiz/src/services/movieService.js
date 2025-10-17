@@ -17,13 +17,23 @@ async function fetchMovies(query) {
             console.log("Movies found:", data.Search);
             return data.Search;
         } else {
-            console.warn("No movies found:", data.Error);
+            console.log("No movies found:", data.Error);
             return [];
         }
     } catch (error) {
-        console.error("API call failed:", error);
+        console.log("API call failed:", error);
         return [];
     }
+}
+
+export async function fetchMovieDetails(id) {
+  try {
+    const response = await axios.get(`${BASE_URL}?apikey=${API_KEY}&i=${id}&plot=full`);
+    return response.data.Response === "True" ? response.data : null;
+  } catch (error) {
+    console.log("Error fetching movie details:", error);
+    return null;
+  }
 }
 
 export default fetchMovies;

@@ -1,10 +1,15 @@
-// import './index.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage"
+import MovieDetails from "./components/MovieDetails";
+
 function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
+    </Router>
   );
 }
 

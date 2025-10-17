@@ -4,7 +4,6 @@ import MovieList from "./MovieList";
 
 function Search({ setMovies }) {
   const [query, setQuery] = useState("");
-  // const [movies, setMovies] = useState([]);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -19,7 +18,7 @@ function Search({ setMovies }) {
     <div>
       <form onSubmit={handleSearch}>
         <input
-        className="bg-gray-300 ml-auto m-5 max-w-600 p-2 rounded-2xl"
+        className="bg-gray-300 ml-auto m-5 md:min-w-100 p-2 rounded-2xl"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search movies..."
