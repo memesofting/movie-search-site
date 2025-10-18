@@ -3,6 +3,7 @@ import { useState } from "react";
 import Footer from "./Footer";
 import MovieList from "./MovieList";
 import Navbar from "./Navbar";
+import RandomMovies from "./RandomMovies";
 
 function HomePage() {
     const [movies, setMovies] = useState([]);
@@ -13,6 +14,7 @@ function HomePage() {
         <Navbar setMovies={setMovies} />
         <main className="flex-grow">
             <MovieList movies={movies} />
+            <RandomMovies />
         </main>
         <Footer />
     </div>

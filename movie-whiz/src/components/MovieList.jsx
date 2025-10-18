@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 
 function MovieList({ movies }) {
     if (!movies || movies.length === 0) {
-        return <p className="text-center text-gray-500 mt-5">No movies found.</p>;
+        return (
+            <>
+            <h2 className="m-5 text-blue-900">Search result</h2>
+                <p className="text-center text-gray-500 mt-5">No movies found.
+                </p>
+            </>
+        );
     }
     return (
         <>
